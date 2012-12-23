@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="366.0" xmlns:fx="http://javafx.com/fxml" fx:controller="pos.view.ItemMediator">
+  <children>
+    <VBox prefHeight="316.0" prefWidth="366.0" spacing="10.0">
+      <children>
+        <Label text="Item Name:">
+          <font>
+            <Font name="Helvetica Bold" size="40.0" fx:id="x1" />
+          </font>
+        </Label>
+        <TextField fx:id="nameInput" prefWidth="200.0" promptText="Name" style="-fx-font:40px &quot;SANS&quot;;" />
+        <Label font="$x1" text="Price:" />
+        <TextField fx:id="priceInput" prefWidth="200.0" promptText="Price" style="-fx-font:40px &quot;SANS&quot;;" />
+        <HBox alignment="CENTER" prefHeight="93.0" prefWidth="346.0" spacing="10.0">
+          <children>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-base: #c50502;" text="Cancel">
+              <font>
+                <Font name="Helvetica Bold" size="20.0" fx:id="x2" />
+              </font>
+            </Button>
+            <Button font="$x2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-base: #159600;" text="OK" />
+          </children>
+        </HBox>
+      </children>
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+    </VBox>
+  </children>
+</AnchorPane>

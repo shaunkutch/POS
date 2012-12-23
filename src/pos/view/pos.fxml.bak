@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0000999999975" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml" fx:controller="pos.view.PosMediator">
+  <children>
+    <SplitPane dividerPositions="0.49902152641878667" focusTraversable="true" prefHeight="768.0000999999975" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0">
+          <children>
+            <HBox alignment="CENTER_RIGHT" minHeight="60.0" prefHeight="100.0" prefWidth="480.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+              <children>
+                <Button id="" fx:id="settingsBtn" focusTraversable="false" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-base: #0265a8;" text="Settings">
+                  <font>
+                    <Font name="Helvetica Bold" size="20.0" fx:id="x4" />
+                  </font>
+                </Button>
+                <Button id="" fx:id="deleteBtn" focusTraversable="false" font="$x4" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-base: #c50502;" text="Delete" />
+                <Button id="" fx:id="voidBtn" focusTraversable="false" font="$x4" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-base: #c50502;" text="VOID" />
+                <Button fx:id="doneBtn" focusTraversable="false" font="$x4" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-base: #159600;" text="Done" textOverrun="CENTER_ELLIPSIS" />
+              </children>
+            </HBox>
+            <SplitPane dividerPositions="0.5757575757575758" focusTraversable="true" orientation="VERTICAL" prefHeight="563.0" prefWidth="479.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="77.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                      <children>
+                        <Label text="Total:">
+                          <font>
+                            <Font name="Helvetica Bold" size="30.0" fx:id="x2" />
+                          </font>
+                          <HBox.margin>
+                            <Insets right="10.0" />
+                          </HBox.margin>
+                        </Label>
+                        <Label fx:id="itemsTotal">
+                          <font>
+                            <Font name="Helvetica" size="30.0" fx:id="x3" />
+                          </font>
+                        </Label>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                      </padding>
+                    </HBox>
+                    <ListView fx:id="itemList" prefHeight="361.0" prefWidth="477.0" style="-fx-font:15px &quot;SANS&quot;;&#10;-fx-border-color:#FFFFFF;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="477.0">
+                  <children>
+                    <ListView id="totals" fx:id="tenders" prefHeight="186.0" prefWidth="479.0" style="-fx-font:15px &quot;SANS&quot;;&#10;-fx-border-color:#FFFFFF;" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
+                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="477.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                      <children>
+                        <Label font="$x2" text="Change:" />
+                        <Label id="itemsTotal" fx:id="change" font="$x3" />
+                      </children>
+                    </HBox>
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+            <HBox alignment="CENTER_RIGHT" layoutY="14.0" prefHeight="50.0" prefWidth="477.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+              <children>
+                <TextField id="itemInout" fx:id="itemInput" maxWidth="1.7976931348623157E308" prefWidth="376.9998779296875" promptText="Item ID" style="-fx-font:40px &quot;SANS&quot;;" HBox.hgrow="ALWAYS" />
+                <Button id="" fx:id="addBtn" focusTraversable="false" font="$x4" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-base: #0265a8;" text="Add" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="767.0" prefWidth="879.0">
+          <children>
+            <TextField id="itemInout" fx:id="tenderInput" alignment="CENTER_RIGHT" layoutY="12.0" maxWidth="1.7976931348623157E308" prefWidth="489.0" promptText="Enter Amount" style="-fx-font:40px &quot;SANS&quot;;" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="8.0" />
+            <GridPane alignment="TOP_CENTER" hgap="10.0" prefHeight="676.0" prefWidth="489.0" vgap="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="77.0">
+              <children>
+                <Button fx:id="sevenBtn" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
+                  <font>
+                    <Font name="Helvetica Bold" size="50.0" fx:id="x1" />
+                  </font>
+                  <GridPane.margin>
+                    <Insets />
+                  </GridPane.margin>
+                </Button>
+                <Button fx:id="eightBtn" focusTraversable="false" font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                <Button fx:id="nineBtn" focusTraversable="false" font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                <Button fx:id="fourBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="fiveBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button id="sixBtm" fx:id="sixBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="oneBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="twoBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="threeBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button fx:id="zeroBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="0" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button id="" fx:id="cashBtn" focusTraversable="false" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-base: #0265a8;" text="Cash" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                  <font>
+                    <Font name="Helvetica Bold" size="25.0" fx:id="x5" />
+                  </font>
+                </Button>
+                <Button fx:id="creditBtn" focusTraversable="false" font="$x5" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="128.0" prefWidth="115.0" style="-fx-base: #0265a8;" text="Credit" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Button fx:id="otherBtn" focusTraversable="false" font="$x5" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-base: #0265a8;" text="Other" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Button fx:id="backBtn" focusTraversable="false" font="$x1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="←" textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                <Button id="dec" fx:id="decimalBtn" focusTraversable="false" font="$x1" graphicTextGap="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="." textOverrun="CENTER_ELLIPSIS" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>
