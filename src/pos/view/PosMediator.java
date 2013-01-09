@@ -215,7 +215,7 @@ public class PosMediator implements Mediator, Initializable {
     }
 
     @Override
-    public void setViewListener(ViewListener viewListener) {
+    public void setViewListener(IViewListener viewListener) {
         this.viewListener = (PosViewListener)viewListener;
     }
     

@@ -8,6 +8,6 @@ package pos.view;
  *
  * @author shaunkutch
  */
-public interface ViewListener {
+public interface IViewListener {
     
 }

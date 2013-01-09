@@ -10,9 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import pos.controller.MainController;
 import pos.controller.PosController;
 import pos.view.Mediator;
-import pos.view.ViewListener;
+import pos.view.IViewListener;
 
 /**
  *
@@ -20,18 +21,16 @@ import pos.view.ViewListener;
  */
 public class Pos extends Application {
     
-    private PosController posController;
+    private MainController mainController;
     public Stage stage;
     
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
-        posController = new PosController(this); 
-        posController.start();
+        mainController = new MainController(this); 
+        mainController.start();
     }
     
-    
-
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be

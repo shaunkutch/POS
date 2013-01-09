@@ -11,9 +11,9 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="lib/gson-2.2.2.jar" size="206262" download="eager" />
-    <jar href="lib/resty-0.3.1.jar" size="130276" download="eager" />
-    <jar href="pos.jar" size="343019" download="eager" />
+    <jar href="lib/gson-2.2.2.jar" size="206264" download="eager" />
+    <jar href="lib/resty-0.3.1.jar" size="130275" download="eager" />
+    <jar href="pos.jar" size="347962" download="eager" />
   </resources>
 <security>
   <all-permissions/>

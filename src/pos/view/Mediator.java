@@ -9,5 +9,5 @@ package pos.view;
  * @author shaunkutch
  */
 public interface Mediator {
-    public void setViewListener(ViewListener viewListener);
+    public void setViewListener(IViewListener viewListener);
 }

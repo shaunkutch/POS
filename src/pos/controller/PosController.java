@@ -19,7 +19,7 @@ import pos.Pos;
 import pos.model.PosModel;
 import pos.view.ItemInputMediator;
 import pos.view.Mediator;
-import pos.view.ViewListener;
+import pos.view.IViewListener;
 import pos.vo.ItemVO;
 import pos.vo.TenderVO;
 
@@ -27,56 +27,28 @@ import pos.vo.TenderVO;
  *
  * @author shaunkutch
  */
-public class PosController {
-
+public class PosController implements IController
+{
+    private IContext mContext;
     private PosModel posModel;
     Boolean mStartNumber = true;
-    private final Pos posApp;
 
-    public PosController(Application app) {
+    public PosController() 
+    {
         posModel = PosModel.getInstance();
-        posApp = (Pos)app;
     }
-    
-    public void start() throws Exception
-    {
-        replaceSceneContent("view/pos.fxml", posViewListener);
-        showStage();
-    }
-    
-    public void replaceSceneContent(String fxml, ViewListener listener) throws Exception {
-        URL location = posApp.getClass().getResource(fxml);
-        FXMLLoader fxmlLoader = new FXMLLoader(location);
 
-        Parent root = (Parent)fxmlLoader.load();
-        Mediator mediator = (Mediator)fxmlLoader.getController();
-        mediator.setViewListener(listener);
-        
-        Scene scene = new Scene(root); 
-        posApp.stage.setScene(scene);
+    @Override
+    public IViewListener getViewListener() {
+        return posViewListener;
     }
-    
-    public void openStageContent(String fxml, ViewListener listener) throws IOException
-    {
-        Stage stage = new Stage();
-        
-        URL location = posApp.getClass().getResource(fxml);
-        FXMLLoader fxmlLoader = new FXMLLoader(location);
 
-        Parent root = (Parent)fxmlLoader.load();
-        Mediator mediator = (Mediator)fxmlLoader.getController();
-        mediator.setViewListener(listener);
-        
-        Scene scene = new Scene(root); 
-        stage.setScene(scene);
+    @Override
+    public void setContext(IContext context) {
+       mContext = context;
     }
     
-    public void showStage()
-    {
-        posApp.stage.show();
-    }
-    
-    public static interface PosViewListener extends ViewListener {
+    public static interface PosViewListener extends IViewListener {
 
         public void removeItem(ItemVO item);
 
@@ -134,15 +106,7 @@ public class PosController {
 
         @Override
         public void showItemInput() throws Exception {
-           replaceSceneContent("view/itemInput.fxml", itemInputViewListener);
+           mContext.openStageContent("view/itemInput.fxml", ItemInputController.class);
         }
-    };
-    
-    public static interface ItemInputViewListener extends ViewListener  {
-        
-    }
-    
-    public ItemInputViewListener itemInputViewListener = new PosController.ItemInputViewListener() {
-        
     };
 }
